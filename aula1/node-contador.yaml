@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: node-contador
+  name: fiap-node-contador
 spec:
   containers:
-    - name: container-pod-1
-      image: nginx:latest
+    - name: fiap-node-contador
+      image: tadrianonet/apicontador-node
