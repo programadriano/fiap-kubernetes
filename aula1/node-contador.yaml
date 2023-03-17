@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-contador
+spec:
+  containers:
+    - name: container-pod-1
+      image: nginx:latest
