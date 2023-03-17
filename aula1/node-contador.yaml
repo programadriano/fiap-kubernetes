@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: fiap-node-contador
+  labels:
+   app: fiap-node-contador
 spec:
   containers:
     - name: fiap-node-contador
