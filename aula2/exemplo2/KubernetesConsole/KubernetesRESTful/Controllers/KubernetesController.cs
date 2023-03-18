@@ -23,5 +23,36 @@ namespace KubernetesRESTful.Controllers
         {
             return Ok(_kubernetesLib.GetEvents());
         }
+
+        [HttpGet("BuscarDescricaoDePod")]
+        public IActionResult Get(string podName)
+        {
+            return Ok(_kubernetesLib.GetPodDescription(podName));
+        }
+
+        [HttpGet("BuscarPods")]
+        public IActionResult GetPods()
+        {
+            return Ok(_kubernetesLib.GetPods());
+        }
+
+        [HttpGet("BuscarServices")]
+        public IActionResult GetServices()
+        {
+            return Ok(_kubernetesLib.GetServices());
+        }
+
+        [HttpGet("BuscarNomeDeContainers")]
+        public IActionResult GetContainerName(string podName)
+        {
+            return Ok(_kubernetesLib.GetContainerName(podName));
+        }
+
+        [HttpGet("BuscarServiceDetails")]
+        public IActionResult GetPodServiceDetails(string serviceName)
+        {
+            return Ok(_kubernetesLib.GetPodServiceDetails(serviceName));
+        }
+
     }
 }
