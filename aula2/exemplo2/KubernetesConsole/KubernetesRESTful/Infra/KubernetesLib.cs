@@ -124,11 +124,12 @@ namespace KubernetesRESTful.Infra
             var service = client.ReadNamespacedService(serviceName, ns);
 
             serviceDetail.ServiceType = service.Spec.Type;
+            serviceDetail.ClusterIp = service.Spec.ClusterIP;
 
             // Get the service ports
             var ports = service.Spec.Ports.FirstOrDefault();
 
-            serviceDetail.Name = ports?.Name;
+            serviceDetail.Name = service.Metadata.Name;
             serviceDetail.PortNumber = ports.Port;
             serviceDetail.TargetPort = ports.TargetPort;
             serviceDetail.Protocol = ports.Protocol;
